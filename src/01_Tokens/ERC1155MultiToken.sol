@@ -159,8 +159,9 @@ contract ERC1155MultiToken {
     }
 
     function supportsInterface(bytes4 interfaceId) public pure returns (bool) {
-        return interfaceId == 0x01ffc9a7 // ERC-165
-            || interfaceId == 0xd9b67a26 // ERC-1155
-            || interfaceId == 0x0e89341c; // ERC-1155Metadata_URI
+        return
+            interfaceId == 0x01ffc9a7 // ERC-165
+                || interfaceId == 0xd9b67a26 // ERC-1155
+                || interfaceId == 0x0e89341c; // ERC-1155Metadata_URI
     }
 }
