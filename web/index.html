@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>100 Solidity Smart Contract Projects — Production Master Architecture</title>
+  <meta name="description" content="Production-ready open-source curriculum of 100 smart contracts in pure Solidity with 201 Foundry tests on Cancun EVM.">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>⚡</text></svg>">
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              50: '#ecfdf5',
+              100: '#d1fae5',
+              400: '#34d399',
+              500: '#10b981',
+              600: '#059669',
+              700: '#047857',
+              900: '#064e3b'
+            },
+            dark: {
+              900: '#0a0d14',
+              800: '#111827',
+              700: '#1f2937',
+              600: '#374151'
+            }
+          },
+          fontFamily: {
+            mono: ['JetBrains Mono', 'Fira Code', 'monospace']
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <!-- PrismJS for syntax highlighting -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css" rel="stylesheet" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-solidity.min.js"></script>
+
+  <style>
+    pre code {
+      font-size: 0.85rem;
+      line-height: 1.5;
+    }
+    .custom-scrollbar::-webkit-scrollbar {
+      width: 6px;
+      height: 6px;
+    }
+    .custom-scrollbar::-webkit-scrollbar-track {
+      background: #111827;
+    }
+    .custom-scrollbar::-webkit-scrollbar-thumb {
+      background: #374151;
+      border-radius: 3px;
+    }
+  </style>
+</head>
+<body class="bg-[#0a0d14] text-slate-100 min-h-screen flex flex-col antialiased selection:bg-emerald-500 selection:text-black">
+
+  <!-- Header -->
+  <header class="border-b border-gray-800 bg-[#0d111a]/80 backdrop-blur sticky top-0 z-40">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+      <div class="flex items-center space-x-3">
+        <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-emerald-400 to-cyan-500 flex items-center justify-center font-bold text-black shadow-lg shadow-emerald-500/20">
+          100
+        </div>
+        <div>
+          <h1 class="text-lg font-bold text-white tracking-tight flex items-center gap-2">
+            100 Solidity Projects
+            <span class="text-xs bg-emerald-500/10 text-emerald-400 border border-emerald-500/30 px-2 py-0.5 rounded-full font-mono">Cancun EVM</span>
+          </h1>
+          <p class="text-xs text-gray-400 hidden sm:block">Pure Solidity 0.8.26 • 201 Foundry Tests • Open Source</p>
+        </div>
+      </div>
+      <div class="flex items-center space-x-3">
+        <a href="https://github.com/basantzp/100-solidity-projects" target="_blank" rel="noopener noreferrer" 
+           class="inline-flex items-center space-x-2 text-xs font-medium px-3.5 py-2 rounded-lg bg-gray-800 hover:bg-gray-700 text-white border border-gray-700 transition">
+          <i data-lucide="github" class="w-4 h-4"></i>
+          <span>GitHub Repo</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="border-b border-gray-800/80 bg-gradient-to-b from-[#0f1422] to-[#0a0d14] py-12 px-4 sm:px-6 lg:px-8">
+    <div class="max-w-7xl mx-auto text-center">
+      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 text-xs font-mono mb-4">
+        <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+        100% Implemented • 201 / 201 Tests Passing
+      </div>
+      <h2 class="text-3xl sm:text-5xl font-black text-white tracking-tight max-w-4xl mx-auto">
+        The Open-Source Master Architecture for <span class="bg-gradient-to-r from-emerald-400 via-teal-300 to-cyan-400 bg-clip-text text-transparent">Modern EVM Smart Contracts</span>
+      </h2>
+      <p class="mt-4 text-base sm:text-lg text-gray-400 max-w-3xl mx-auto leading-relaxed">
+        From foundational ERC standards and AMMs to EIP-1153 transient storage, ERC-4337 Account Abstraction, zk-SNARK verifiers, and rollup settlement engines.
+      </p>
+
+      <!-- Key Metrics -->
+      <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 max-w-4xl mx-auto mt-8">
+        <div class="bg-gray-900/60 border border-gray-800 p-4 rounded-xl">
+          <div class="text-3xl font-extrabold text-emerald-400 font-mono">100</div>
+          <div class="text-xs text-gray-400 uppercase tracking-wider font-semibold mt-1">Contracts</div>
+        </div>
+        <div class="bg-gray-900/60 border border-gray-800 p-4 rounded-xl">
+          <div class="text-3xl font-extrabold text-cyan-400 font-mono">201</div>
+          <div class="text-xs text-gray-400 uppercase tracking-wider font-semibold mt-1">Passing Tests</div>
+        </div>
+        <div class="bg-gray-900/60 border border-gray-800 p-4 rounded-xl">
+          <div class="text-3xl font-extrabold text-amber-400 font-mono">10</div>
+          <div class="text-xs text-gray-400 uppercase tracking-wider font-semibold mt-1">Core Pillars</div>
+        </div>
+        <div class="bg-gray-900/60 border border-gray-800 p-4 rounded-xl">
+          <div class="text-3xl font-extrabold text-purple-400 font-mono">0.8.26</div>
+          <div class="text-xs text-gray-400 uppercase tracking-wider font-semibold mt-1">Solc Cancun</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Controls: Search & Filter -->
+  <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 w-full">
+    <div class="flex flex-col md:flex-row gap-4 items-stretch md:items-center justify-between">
+      <!-- Search Input -->
+      <div class="relative flex-1">
+        <i data-lucide="search" class="w-5 h-5 absolute left-3.5 top-1/2 -translate-y-1/2 text-gray-500"></i>
+        <input type="text" id="searchInput" placeholder="Search by name, category, EIP, algorithm, keyword (e.g. EIP-1153, flash loan, AMM, AA, ZK)..." 
+               class="w-full pl-11 pr-4 py-3 bg-gray-900/80 border border-gray-800 rounded-xl text-sm text-white placeholder-gray-500 focus:outline-none focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500 transition">
+      </div>
+      <!-- View Count Indicator -->
+      <div class="text-xs text-gray-400 font-mono flex items-center gap-2 justify-end">
+        <span>Showing:</span>
+        <span id="filteredCount" class="text-emerald-400 font-bold">100</span>
+        <span>/ 100 Projects</span>
+      </div>
+    </div>
+
+    <!-- Pillar Filter Tabs -->
+    <div class="flex flex-wrap gap-2 mt-4 custom-scrollbar overflow-x-auto pb-2" id="pillarFilters">
+      <button class="filter-btn active px-3 py-1.5 rounded-lg text-xs font-medium bg-emerald-500 text-black transition" data-pillar="all">
+        All Pillars (100)
+      </button>
+      <!-- Generated via JS -->
+    </div>
+  </section>
+
+  <!-- Projects Grid -->
+  <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-16 w-full flex-1">
+    <div id="projectsGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+      <!-- Cards injected by app.js -->
+    </div>
+
+    <!-- Empty State -->
+    <div id="emptyState" class="hidden text-center py-16 bg-gray-900/30 border border-gray-800 rounded-2xl">
+      <i data-lucide="search-x" class="w-12 h-12 text-gray-600 mx-auto mb-3"></i>
+      <h3 class="text-lg font-bold text-gray-300">No matching projects found</h3>
+      <p class="text-sm text-gray-500 mt-1">Try refining your search keyword or clearing pillar filters.</p>
+    </div>
+  </main>
+
+  <!-- Code Inspection Modal -->
+  <div id="codeModal" class="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4">
+    <div class="bg-[#111827] border border-gray-800 rounded-2xl w-full max-w-5xl max-h-[90vh] flex flex-col shadow-2xl overflow-hidden">
+      <!-- Modal Header -->
+      <div class="px-6 py-4 border-b border-gray-800 flex items-center justify-between bg-gray-900/60">
+        <div class="flex items-center space-x-3">
+          <span id="modalProjectId" class="text-xs font-mono font-bold px-2 py-0.5 rounded bg-emerald-500/20 text-emerald-400 border border-emerald-500/30">#01</span>
+          <div>
+            <h3 id="modalProjectName" class="text-lg font-bold text-white font-mono">ContractName.sol</h3>
+            <p id="modalProjectPillar" class="text-xs text-gray-400">Pillar 01: Foundational Tokens</p>
+          </div>
+        </div>
+        <div class="flex items-center space-x-2">
+          <button id="copyModalCodeBtn" class="text-xs font-medium px-3 py-1.5 bg-gray-800 hover:bg-gray-700 text-gray-200 border border-gray-700 rounded-lg flex items-center gap-1.5 transition">
+            <i data-lucide="copy" class="w-3.5 h-3.5"></i>
+            <span id="copyBtnText">Copy Code</span>
+          </button>
+          <a id="modalGitHubLink" href="#" target="_blank" rel="noopener noreferrer" class="text-xs font-medium px-3 py-1.5 bg-gray-800 hover:bg-gray-700 text-gray-200 border border-gray-700 rounded-lg flex items-center gap-1.5 transition">
+            <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
+            <span>GitHub</span>
+          </a>
+          <button id="closeModalBtn" class="p-1.5 text-gray-400 hover:text-white hover:bg-gray-800 rounded-lg transition">
+            <i data-lucide="x" class="w-5 h-5"></i>
+          </button>
+        </div>
+      </div>
+
+      <!-- Modal Tabs: Contract vs Test -->
+      <div class="px-6 pt-3 bg-gray-900/40 border-b border-gray-800 flex items-center space-x-4">
+        <button id="tabSrcBtn" class="pb-2 text-xs font-mono font-semibold text-emerald-400 border-b-2 border-emerald-500 transition">
+          Contract Source (.sol)
+        </button>
+        <button id="tabTestBtn" class="pb-2 text-xs font-mono font-semibold text-gray-400 hover:text-gray-200 border-b-2 border-transparent transition">
+          Foundry Test Suite (.t.sol)
+        </button>
+        <div class="flex-1"></div>
+        <div id="modalGasBadge" class="text-xs font-mono text-gray-400 pb-2">Gas Profile: ~51,000</div>
+      </div>
+
+      <!-- Modal Code Container -->
+      <div class="p-6 overflow-y-auto custom-scrollbar flex-1 bg-[#0a0d14]">
+        <pre class="!bg-transparent !p-0 !m-0"><code id="modalCode" class="language-solidity"></code></pre>
+      </div>
+
+      <!-- Modal Footer -->
+      <div class="px-6 py-3 border-t border-gray-800 bg-gray-900/60 flex items-center justify-between text-xs text-gray-400 font-mono">
+        <div class="flex items-center gap-2">
+          <span>Run test:</span>
+          <code id="modalTestCmd" class="bg-gray-800 px-2 py-0.5 rounded text-emerald-300">forge test --match-contract ERC20PermitTest</code>
+        </div>
+        <button id="copyTestCmdBtn" class="text-emerald-400 hover:underline">Copy Command</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="border-t border-gray-800 bg-[#0d111a] py-8 px-4 sm:px-6 lg:px-8 text-center text-xs text-gray-500">
+    <div class="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
+      <div>
+        <span class="font-bold text-gray-300">100 Solidity Smart Contract Projects</span> • Open Source Master Curriculum
+      </div>
+      <div class="flex items-center space-x-4">
+        <a href="https://github.com/basantzp/100-solidity-projects" target="_blank" rel="noopener noreferrer" class="hover:text-emerald-400 transition">GitHub</a>
+        <a href="https://github.com/basantzp/100-solidity-projects/blob/master/LICENSE" target="_blank" rel="noopener noreferrer" class="hover:text-emerald-400 transition">MIT License</a>
+        <a href="https://github.com/basantzp/100-solidity-projects/blob/master/ROADMAP.md" target="_blank" rel="noopener noreferrer" class="hover:text-emerald-400 transition">Roadmap</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="projects-data.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

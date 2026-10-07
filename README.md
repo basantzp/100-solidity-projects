@@ -1,10 +1,13 @@
 # 💯 100 Solidity Smart Contract Projects (Production Architecture)
 
+[![Live Web Explorer](https://img.shields.io/badge/Live%20Explorer-100--solidity--projects.vercel.app-10b981.svg?style=flat-square&logo=vercel)](https://100-solidity-projects.vercel.app)
 [![Foundry](https://img.shields.io/badge/Foundry-v1.8.4-red.svg)](https://getfoundry.sh/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Solidity](https://img.shields.io/badge/Solidity-0.8.26-363636.svg)](https://soliditylang.org/)
 [![Cancun EVM](https://img.shields.io/badge/EVM-Cancun%20(EIP--1153)-blue.svg)](https://eips.ethereum.org/EIPS/eip-1153)
 [![Test Suite](https://img.shields.io/badge/Tests-201%2F201%20Passing-brightgreen.svg)](test/)
+
+> 🌐 **Live Web Explorer & Interactive Code Inspector**: [https://100-solidity-projects.vercel.app](https://100-solidity-projects.vercel.app)
 
 A comprehensive, production-grade open-source curriculum of **100 Solidity Smart Contract Projects** engineered for modern EVM protocols, Layer 2 rollups, Account Abstraction, and decentralized finance.
 
