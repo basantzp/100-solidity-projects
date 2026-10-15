@@ -5,13 +5,13 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Solidity](https://img.shields.io/badge/Solidity-0.8.26-363636.svg)](https://soliditylang.org/)
 [![Cancun EVM](https://img.shields.io/badge/EVM-Cancun%20(EIP--1153)-blue.svg)](https://eips.ethereum.org/EIPS/eip-1153)
-[![Test Suite](https://img.shields.io/badge/Tests-203%2F203%20Passing-brightgreen.svg)](test/)
+[![Test Suite](https://img.shields.io/badge/Tests-219%2F219%20Passing-brightgreen.svg)](test/)
 
 > 🌐 **Live Web Explorer & Interactive Code Inspector**: [https://100-solidity-projects.vercel.app](https://100-solidity-projects.vercel.app)
 
 A comprehensive, production-grade open-source curriculum of **100 Solidity Smart Contract Projects** engineered for modern EVM protocols, Layer 2 rollups, Account Abstraction, and decentralized finance.
 
-All contracts feature complete **Foundry test suites (201/201 tests passing across 100 test suites)**, Cancun EVM optimizations (`tstore`/`tload`), Yul assembly efficiency, custom errors, and zero external baggage.
+All contracts feature complete **Foundry test suites (219/219 tests passing across 104 test suites including formal stateful invariant fuzzers)**, Cancun EVM optimizations (`tstore`/`tload`), Yul assembly efficiency, custom errors, and zero external baggage.
 
 ---
 

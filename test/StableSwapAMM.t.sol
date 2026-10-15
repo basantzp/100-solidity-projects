@@ -52,4 +52,37 @@ contract StableSwapAMMTest is Test {
         assertLe(amountOut, amountIn);
         assertEq(usdt.balanceOf(trader) - usdtBefore, amountOut);
     }
+
+    function test_Swap1For0_NearZeroSlippage() public {
+        usdt.mint(trader, 5_000e18);
+        vm.prank(trader);
+        usdt.approve(address(amm), type(uint256).max);
+
+        uint256 amountIn = 2_000e18;
+        uint256 usdcBefore = usdc.balanceOf(trader);
+
+        vm.prank(trader);
+        uint256 amountOut = amm.swap1For0(amountIn, 1998e18);
+
+        assertGt(amountOut, 1998e18);
+        assertLe(amountOut, amountIn);
+        assertEq(usdc.balanceOf(trader) - usdcBefore, amountOut);
+    }
+
+    function test_RemoveLiquidity_Proportional() public {
+        uint256 lpShares = amm.balanceOf(lp);
+        uint256 burnShares = lpShares / 2; // burn 50% of LP shares
+
+        uint256 usdcBefore = usdc.balanceOf(lp);
+        uint256 usdtBefore = usdt.balanceOf(lp);
+
+        vm.prank(lp);
+        (uint256 amount0, uint256 amount1) = amm.removeLiquidity(burnShares, 240_000e18, 240_000e18);
+
+        assertEq(amount0, 250_000e18);
+        assertEq(amount1, 250_000e18);
+        assertEq(usdc.balanceOf(lp) - usdcBefore, 250_000e18);
+        assertEq(usdt.balanceOf(lp) - usdtBefore, 250_000e18);
+        assertEq(amm.balanceOf(lp), lpShares - burnShares);
+    }
 }

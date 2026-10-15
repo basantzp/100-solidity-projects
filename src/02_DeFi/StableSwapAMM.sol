@@ -131,6 +131,51 @@ contract StableSwapAMM {
         emit TokenExchange(msg.sender, amount0In, amount1Out);
     }
 
+    /// @notice Swap token1 for token0 using the Stableswap invariant
+    function swap1For0(uint256 amount1In, uint256 minAmount0Out) external returns (uint256 amount0Out) {
+        if (amount1In == 0) revert ZeroAmount();
+
+        uint256 y = reserve1 + amount1In;
+        uint256 D = getD(reserve0, reserve1);
+        uint256 x = getY(y, D);
+
+        amount0Out = reserve0 - x;
+        if (amount0Out < minAmount0Out) revert InsufficientOutput();
+
+        reserve1 = y;
+        reserve0 = x;
+
+        _safeTransferFrom(token1, msg.sender, address(this), amount1In);
+        _safeTransfer(token0, msg.sender, amount0Out);
+
+        emit TokenExchange(msg.sender, amount1In, amount0Out);
+    }
+
+    /// @notice Burn LP shares proportionally to withdraw both token0 and token1
+    function removeLiquidity(uint256 shares, uint256 minAmount0, uint256 minAmount1)
+        external
+        returns (uint256 amount0, uint256 amount1)
+    {
+        if (shares == 0) revert ZeroAmount();
+        if (balanceOf[msg.sender] < shares) revert InsufficientOutput();
+
+        amount0 = (shares * reserve0) / totalSupply;
+        amount1 = (shares * reserve1) / totalSupply;
+
+        if (amount0 < minAmount0 || amount1 < minAmount1) revert InsufficientOutput();
+
+        balanceOf[msg.sender] -= shares;
+        totalSupply -= shares;
+
+        reserve0 -= amount0;
+        reserve1 -= amount1;
+
+        _safeTransfer(token0, msg.sender, amount0);
+        _safeTransfer(token1, msg.sender, amount1);
+
+        emit RemoveLiquidity(msg.sender, amount0, amount1, shares);
+    }
+
     function _safeTransfer(address token, address to, uint256 amount) internal {
         (bool success, bytes memory data) = token.call(abi.encodeWithSignature("transfer(address,uint256)", to, amount));
         if (!success || (data.length != 0 && !abi.decode(data, (bool)))) revert TransferFailed();
