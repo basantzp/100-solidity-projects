@@ -2,7 +2,7 @@
 
 > **Repository**: [`basantzp/100-solidity-projects`](https://github.com/basantzp/100-solidity-projects)  
 > **Compiler**: Solc `0.8.26` (Cancun EVM, EIP-1153 `tstore`/`tload`)  
-> **Last Invariant Run**: `2026-10-30 08:47:43 +0545`  
+> **Last Invariant Run**: `2026-10-30 11:53:39 +0545`  
 > **Verification Status**: 🟢 **100% Green (All Invariants Proven)**  
 > **Author**: `basantzp <basantpok90@gmail.com>`
 
@@ -27,22 +27,22 @@ VariableRateMarketInvariantTest invariants:
 [PASS] invariant_BorrowIndexMonotonic
 [PASS] invariant_BorrowRateBounded
 [PASS] invariant_MarketSolvency
- VariableRateMarketInvariantTest invariants (runs: 32, calls: 480, reverts: 25)
-Suite result: ok. 1 passed; 0 failed; 0 skipped; finished in 170.35ms (162.57ms CPU time)
-[PASS]
-ConstantProductAMMInvariantTest invariants:
-[PASS] invariant_KNeverDecreases
-[PASS] invariant_MinimumLiquidityLocked
-[PASS] invariant_SolvencyMatchesReserves
- ConstantProductAMMInvariantTest invariants (runs: 32, calls: 480, reverts: 0)
-Suite result: ok. 1 passed; 0 failed; 0 skipped; finished in 212.35ms (207.25ms CPU time)
+ VariableRateMarketInvariantTest invariants (runs: 32, calls: 480, reverts: 23)
+Suite result: ok. 1 passed; 0 failed; 0 skipped; finished in 77.82ms (74.95ms CPU time)
 [PASS]
 FlashLenderInvariantTest invariants:
 [PASS] invariant_MaxFlashLoanMatchesReserve
 [PASS] invariant_PoolBalanceMonotonicallyIncreases
 [PASS] invariant_UnsupportedTokenZeroLoan
  FlashLenderInvariantTest invariants (runs: 32, calls: 480, reverts: 0)
-Suite result: ok. 1 passed; 0 failed; 0 skipped; finished in 265.66ms (259.82ms CPU time)
+Suite result: ok. 1 passed; 0 failed; 0 skipped; finished in 97.28ms (95.60ms CPU time)
+[PASS]
+ConstantProductAMMInvariantTest invariants:
+[PASS] invariant_KNeverDecreases
+[PASS] invariant_MinimumLiquidityLocked
+[PASS] invariant_SolvencyMatchesReserves
+ ConstantProductAMMInvariantTest invariants (runs: 32, calls: 480, reverts: 0)
+Suite result: ok. 1 passed; 0 failed; 0 skipped; finished in 117.12ms (114.35ms CPU time)
 [PASS]
 StableSwapAMMInvariantTest invariants:
 [PASS] invariant_DIsStrictlyPositive
