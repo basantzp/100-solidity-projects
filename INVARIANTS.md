@@ -2,7 +2,7 @@
 
 > **Repository**: [`basantzp/100-solidity-projects`](https://github.com/basantzp/100-solidity-projects)  
 > **Compiler**: Solc `0.8.26` (Cancun EVM, EIP-1153 `tstore`/`tload`)  
-> **Last Invariant Run**: `2026-11-02 20:58:45 +0545`  
+> **Last Invariant Run**: `2026-11-03 00:59:45 +0545`  
 > **Verification Status**: 🟢 **100% Green (All Invariants Proven)**  
 > **Author**: `basantzp <basantpok90@gmail.com>`
 
@@ -27,22 +27,22 @@ VariableRateMarketInvariantTest invariants:
 [PASS] invariant_BorrowIndexMonotonic
 [PASS] invariant_BorrowRateBounded
 [PASS] invariant_MarketSolvency
- VariableRateMarketInvariantTest invariants (runs: 32, calls: 480, reverts: 29)
-Suite result: ok. 1 passed; 0 failed; 0 skipped; finished in 139.20ms (131.67ms CPU time)
+ VariableRateMarketInvariantTest invariants (runs: 32, calls: 480, reverts: 33)
+Suite result: ok. 1 passed; 0 failed; 0 skipped; finished in 114.80ms (108.98ms CPU time)
 [PASS]
 FlashLenderInvariantTest invariants:
 [PASS] invariant_MaxFlashLoanMatchesReserve
 [PASS] invariant_PoolBalanceMonotonicallyIncreases
 [PASS] invariant_UnsupportedTokenZeroLoan
  FlashLenderInvariantTest invariants (runs: 32, calls: 480, reverts: 0)
-Suite result: ok. 1 passed; 0 failed; 0 skipped; finished in 211.87ms (207.46ms CPU time)
+Suite result: ok. 1 passed; 0 failed; 0 skipped; finished in 222.64ms (218.11ms CPU time)
 [PASS]
 ConstantProductAMMInvariantTest invariants:
 [PASS] invariant_KNeverDecreases
 [PASS] invariant_MinimumLiquidityLocked
 [PASS] invariant_SolvencyMatchesReserves
  ConstantProductAMMInvariantTest invariants (runs: 32, calls: 480, reverts: 0)
-Suite result: ok. 1 passed; 0 failed; 0 skipped; finished in 224.97ms (217.89ms CPU time)
+Suite result: ok. 1 passed; 0 failed; 0 skipped; finished in 229.68ms (224.10ms CPU time)
 [PASS]
 StableSwapAMMInvariantTest invariants:
 [PASS] invariant_DIsStrictlyPositive
