@@ -2,7 +2,7 @@
 
 > **Repository**: [`basantzp/100-solidity-projects`](https://github.com/basantzp/100-solidity-projects)  
 > **Compiler**: Solc `0.8.26` (Cancun EVM, EIP-1153 `tstore`/`tload`)  
-> **Last Invariant Run**: `2026-11-03 16:24:28 +0545`  
+> **Last Invariant Run**: `2026-11-03 23:48:03 +0545`  
 > **Verification Status**: 🟢 **100% Green (All Invariants Proven)**  
 > **Author**: `basantzp <basantpok90@gmail.com>`
 
@@ -27,22 +27,22 @@ VariableRateMarketInvariantTest invariants:
 [PASS] invariant_BorrowIndexMonotonic
 [PASS] invariant_BorrowRateBounded
 [PASS] invariant_MarketSolvency
- VariableRateMarketInvariantTest invariants (runs: 32, calls: 480, reverts: 20)
-Suite result: ok. 1 passed; 0 failed; 0 skipped; finished in 53.54ms (51.33ms CPU time)
+ VariableRateMarketInvariantTest invariants (runs: 32, calls: 480, reverts: 34)
+Suite result: ok. 1 passed; 0 failed; 0 skipped; finished in 224.55ms (206.97ms CPU time)
 [PASS]
 ConstantProductAMMInvariantTest invariants:
 [PASS] invariant_KNeverDecreases
 [PASS] invariant_MinimumLiquidityLocked
 [PASS] invariant_SolvencyMatchesReserves
  ConstantProductAMMInvariantTest invariants (runs: 32, calls: 480, reverts: 0)
-Suite result: ok. 1 passed; 0 failed; 0 skipped; finished in 96.08ms (93.74ms CPU time)
+Suite result: ok. 1 passed; 0 failed; 0 skipped; finished in 408.07ms (397.75ms CPU time)
 [PASS]
 FlashLenderInvariantTest invariants:
 [PASS] invariant_MaxFlashLoanMatchesReserve
 [PASS] invariant_PoolBalanceMonotonicallyIncreases
 [PASS] invariant_UnsupportedTokenZeroLoan
  FlashLenderInvariantTest invariants (runs: 32, calls: 480, reverts: 0)
-Suite result: ok. 1 passed; 0 failed; 0 skipped; finished in 126.67ms (124.15ms CPU time)
+Suite result: ok. 1 passed; 0 failed; 0 skipped; finished in 519.14ms (506.12ms CPU time)
 [PASS]
 StableSwapAMMInvariantTest invariants:
 [PASS] invariant_DIsStrictlyPositive
